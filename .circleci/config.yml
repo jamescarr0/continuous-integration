@@ -1,6 +1,6 @@
 # Python CircleCI 2.0 Configuration File.
 
-version:2
+version: 2
 jobs:
   build:
     docker:
@@ -15,7 +15,7 @@ jobs:
         # Step 2: Create virtual env and install dependencies
         - run:
             name: install dependencies
-              command:  |
+              command:
                 python3 -m venv venv
                 source venv/bin/activate
                 pip install -r requirements.txt
@@ -23,6 +23,6 @@ jobs:
         # Run the tests
         - run:
           name: run tests
-            command:  |
+            command:
               source venv/bin/activate
               pytest -v --cov=libcalc
