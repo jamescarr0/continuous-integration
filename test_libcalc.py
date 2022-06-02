@@ -11,3 +11,6 @@ class TestCalculator:
 
     def test_multiplication(self):
         assert 8 == libcalc.multiply(4, 2)
+
+    def test_division(self):
+        assert 10 == libcalc.divide(100, 10)
