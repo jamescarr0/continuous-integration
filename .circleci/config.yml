@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: circleci/python:3.7
 
-      working_directory: ~/repo
+    working_directory: ~/repo
 
       steps:
         # Step 1: obtain repo from GitHub
@@ -15,7 +15,7 @@ jobs:
         # Step 2: Create virtual env and install dependencies
         - run:
             name: install dependencies
-              command:
+              command: |
                 python3 -m venv venv
                 source venv/bin/activate
                 pip install -r requirements.txt
@@ -23,6 +23,6 @@ jobs:
         # Run the tests
         - run:
           name: run tests
-            command:
+            command: |
               source venv/bin/activate
               pytest -v --cov=libcalc
